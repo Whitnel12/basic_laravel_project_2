@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,10 @@ Route::post('/pesanan/hapus/{id}', [PesananController::class, 'hapus'])->name('p
 Route::get('/pesanan/form-edit-pesanan/{id}', [PesananController::class, 'form_edit'])->name('pesanan.form-edit-pesanan'); 
 Route::post('/pesanan/edit/{id}', [PesananController::class, 'edit'])->name('pesanan.form-edit-pesanan.edit'); 
 Route::patch('/pesanan/{id}', [PesananController::class, 'updateStatus'])->name('pesanan.update-status'); 
+
+// SESI AUTH
+Route::get('/sesi', [SessionController::class, 'index'])->name('sesi');
+Route::post('/sesi/login', [SessionController::class, 'login'])->name('login');
+Route::get('/sesi/form_register', [SessionController::class, 'form_register'])->name('form_register');
+Route::post('/sesi/register', [SessionController::class, 'register'])->name('register');
+Route::get('/sesi/logout', [SessionController::class, 'logout'])->name('logout');

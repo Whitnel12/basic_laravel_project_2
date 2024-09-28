@@ -4,6 +4,9 @@
 
 <div class="container">
   <h1>halaman tampil pesanan</h1>
+
+  
+@include('info.pesan')
   
 <div class="container container-custom">
   <a href="{{ route('pesanan.form-tambah-pesanan') }}" class="btn btn-primary mt-5">
